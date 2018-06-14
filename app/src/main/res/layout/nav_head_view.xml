@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mNavHeadRl"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:background="@color/colorPrimary"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    >
+
+    <ImageView
+        android:id="@+id/iv_head_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        />
+
+    <ImageView
+        android:id="@+id/iv_head"
+        android:layout_width="@dimen/size_80dp"
+        android:layout_height="@dimen/size_80dp"
+        android:layout_centerInParent="true"
+        />
+
+    <TextView
+        android:id="@+id/tv_about_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_about_mail"
+        android:layout_marginStart="@dimen/size_10dp"
+        android:text="@string/tv_me_instruction"
+        android:textColor="#FFF"
+        android:textSize="@dimen/size_14dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_about_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/size_10dp"
+        android:text="@string/tv_me_email"
+        android:textColor="#FFF"
+        android:textSize="@dimen/size_14dp"
+        />
+
+
+</RelativeLayout>

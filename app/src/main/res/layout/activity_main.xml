@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/mMainDrawerLayoutDl"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        >
+
+        <!--主布局-->
+        <FrameLayout
+            android:id="@+id/mMainContainerFl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            />
+        <!--侧滑菜单布局-->
+        <android.support.design.widget.NavigationView
+            android:id="@+id/mMainNavigationViewNv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/nav_head_view"
+            app:menu="@menu/menu_nav"
+            />
+    </android.support.v4.widget.DrawerLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/mMainBottomNavigationViewBv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/menu_nav_bottom"
+        />
+</LinearLayout>

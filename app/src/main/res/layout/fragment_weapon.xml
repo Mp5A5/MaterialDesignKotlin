@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <!--
+      android:theme 设置背景主题深色，这样字体会变成白色
+      app:popupTheme 设置弹出的主题是亮色
+   -->
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/mWeaponAppBarLayoutAl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/mWeaponToolbarT"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="?android:attr/colorPrimary"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+            app:popupTheme="@style/Theme.AppCompat.Light"
+            app:title="@string/weapon_inc"
+            />
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/mWeaponRefreshLayoutRl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/mWeaponRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:foregroundGravity="center"
+            />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/mWeaponFloatingActionButtonFab"
+        android:layout_width="@dimen/size_50dp"
+        android:layout_height="@dimen/size_50dp"
+        android:layout_marginBottom="@dimen/size_50dp"
+        android:layout_marginEnd="@dimen/size_20dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:src="@mipmap/ic_action_arrow_up"
+        android:textSize="@dimen/size_30dp"
+        app:backgroundTint="@color/colorPrimary"
+        app:elevation="@dimen/size_6dp"
+        app:fabSize="normal"
+        app:layout_anchor="@id/mWeaponRefreshLayoutRl"
+        app:layout_anchorGravity="bottom|end"
+        app:pressedTranslationZ="@dimen/size_12dp"
+        />
+</android.support.design.widget.CoordinatorLayout>
