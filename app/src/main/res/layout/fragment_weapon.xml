@@ -23,6 +23,7 @@
             android:fitsSystemWindows="true"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+            app:navigationIcon="@mipmap/titlebar_menu"
             app:popupTheme="@style/Theme.AppCompat.Light"
             app:title="@string/weapon_inc"
             />

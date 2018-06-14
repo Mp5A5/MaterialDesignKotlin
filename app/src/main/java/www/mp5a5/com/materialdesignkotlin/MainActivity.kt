@@ -71,10 +71,10 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.nav_people_inc -> {
                     if (peopleFragment == null) {
-                        peopleFragment = TestFragment.newInstance(getString(R.string.sub_inc))
+                        peopleFragment = TestFragment.newInstance(getString(R.string.people_inc))
                     }
                     switchFragment(peopleFragment!!)
-                    mMainBottomNavigationViewBv.selectedItemId = R.id.bottom_weapon_inc
+                    mMainBottomNavigationViewBv.selectedItemId = R.id.bottom_people_inc
                 }
 
                 R.id.nav_sub_inc -> {
@@ -117,6 +117,7 @@ class MainActivity : AppCompatActivity() {
 
         //底部点击事件
         mMainBottomNavigationViewBv!!.setOnNavigationItemReselectedListener {
+            mMainDrawerLayoutDl!!.closeDrawers()
             when (it.itemId) {
                 R.id.bottom_weapon_inc -> {
                     if (weaponFragment == null) {
