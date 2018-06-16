@@ -1,10 +1,11 @@
-package www.mp5a5.com.materialdesignkotlin
+package www.mp5a5.com.materialdesignkotlin.view.frag
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import www.mp5a5.com.materialdesignkotlin.R
 
 /**
  * @describe

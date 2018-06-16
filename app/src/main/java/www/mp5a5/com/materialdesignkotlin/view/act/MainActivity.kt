@@ -1,4 +1,4 @@
-package www.mp5a5.com.materialdesignkotlin
+package www.mp5a5.com.materialdesignkotlin.view.act
 
 import android.app.AlertDialog
 import android.os.Bundle
@@ -12,6 +12,10 @@ import android.view.Window
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_main.*
+import www.mp5a5.com.materialdesignkotlin.Constant
+import www.mp5a5.com.materialdesignkotlin.R
+import www.mp5a5.com.materialdesignkotlin.view.frag.BeautifulGirlFragment
+import www.mp5a5.com.materialdesignkotlin.view.frag.TestFragment
 
 
 fun showSnackbar(viewGroup: ViewGroup, str: String, duration: Int = 1000) {
@@ -24,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     private var currentFragment: Fragment? = null
 
-    private var weaponFragment: WeaponFragment? = null
+    private var weaponFragment: BeautifulGirlFragment? = null
     private var peopleFragment: TestFragment? = null
     private var subFragment: TestFragment? = null
     private var thingsFragment: TestFragment? = null
@@ -36,13 +40,15 @@ class MainActivity : AppCompatActivity() {
         initView()
         initListener()
         if (weaponFragment == null) {
-            weaponFragment = WeaponFragment()
+            weaponFragment = BeautifulGirlFragment()
         }
         switchFragment(weaponFragment!!)
     }
 
 
     private fun initView() {
+        
+        
         Glide.with(this)
                 .load(Constant.HEAD_IMAGE_URL)
                 .into(mMainNavigationViewNv.getHeaderView(0).findViewById(R.id.iv_head))
@@ -63,7 +69,7 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.nav_weapon_inc -> {
                     if (weaponFragment == null) {
-                        weaponFragment = WeaponFragment()
+                        weaponFragment = BeautifulGirlFragment()
                     }
                     switchFragment(weaponFragment!!)
                     mMainBottomNavigationViewBv.selectedItemId = R.id.bottom_weapon_inc
@@ -121,7 +127,7 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.bottom_weapon_inc -> {
                     if (weaponFragment == null) {
-                        weaponFragment = WeaponFragment()
+                        weaponFragment = BeautifulGirlFragment()
                     }
                     switchFragment(weaponFragment!!)
                     mMainNavigationViewNv.setCheckedItem(R.id.nav_weapon_inc)

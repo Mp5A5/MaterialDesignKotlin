@@ -16,6 +16,6 @@ class Constant {
          */
         const val MASTER_URL = "http://owj4ejy7m.bkt.clouddn.com/"
 
-        const val EXTRA_WEAPON_BEAN = "weapon_bean"
+        const val GIRL_BEAN = "girl_bean"
     }
 }

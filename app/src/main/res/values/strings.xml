@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Gun</string>
+    <string name="app_name">Girl</string>
     <string name="open">open</string>
     <string name="close">close</string>
     <string name="linearhorizontal">linearHorizontal</string>
@@ -8,7 +8,7 @@
     <string name="gridvertical">gridVertical</string>
     <string name="staggeredhorizontal">staggeredHorizontal</string>
     <string name="staggeredvertical">staggeredVertical</string>
-    <string name="weapon_inc">枪械简介</string>
+    <string name="weapon_inc">美女图片</string>
     <string name="people_inc">人物简介</string>
     <string name="sub_inc">配件简介</string>
     <string name="thing_inc">空投简介</string>
@@ -20,4 +20,7 @@
 
     <string name="tv_me_instruction">Mp5A5</string>
     <string name="tv_me_email">wwb199055@126.com</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

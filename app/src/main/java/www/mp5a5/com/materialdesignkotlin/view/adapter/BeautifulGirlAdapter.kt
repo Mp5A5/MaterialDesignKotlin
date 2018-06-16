@@ -1,8 +1,10 @@
-package www.mp5a5.com.materialdesignkotlin
+package www.mp5a5.com.materialdesignkotlin.view.adapter
 
 import com.bumptech.glide.Glide
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
+import www.mp5a5.com.materialdesignkotlin.R
+import www.mp5a5.com.materialdesignkotlin.net.WeaponEntity
 
 /**
  * @describe
@@ -14,9 +16,9 @@ class WeaponAdapter(layoutId: Int = R.layout.item_weapon) : BaseQuickAdapter<Wea
 
     override fun convert(helper: BaseViewHolder?, item: WeaponEntity?) {
         Glide.with(mContext)
-                .load(item?.imageUrl)
-                .into(helper!!.getView(R.id.iv_weapon))
-        helper.setText(R.id.tv_weapon_name, item!!.name)
+                .load(item?.thumb)
+                .into(helper!!.getView(R.id.iv_girl_img))
+        helper.setText(R.id.tv_girl_name, item!!.title)
     }
 
     override fun onItemMoving(startPosition: Int, endPosition: Int) {
