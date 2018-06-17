@@ -22,8 +22,8 @@ import kotlinx.android.synthetic.main.fragment_weapon.*
 import www.mp5a5.com.materialdesignkotlin.Constant
 import www.mp5a5.com.materialdesignkotlin.R
 import www.mp5a5.com.materialdesignkotlin.net.BeautifulGirlService
-import www.mp5a5.com.materialdesignkotlin.net.WeaponEntity
-import www.mp5a5.com.materialdesignkotlin.net.WeaponEntityResult
+import www.mp5a5.com.materialdesignkotlin.net.GirlEntity
+import www.mp5a5.com.materialdesignkotlin.net.GirlEntityResult
 import www.mp5a5.com.materialdesignkotlin.view.act.BeautifulGirlDetailActivity
 import www.mp5a5.com.materialdesignkotlin.view.adapter.WeaponAdapter
 import java.util.*
@@ -100,7 +100,7 @@ class BeautifulGirlFragment : Fragment(), BaseQuickAdapter.OnItemClickListener, 
         }
     }
     
-    private fun setData(code: Int, weaponEntityResult: WeaponEntityResult, isRefresh: Boolean) {
+    private fun setData(code: Int, weaponEntityResult: GirlEntityResult, isRefresh: Boolean) {
         
         Log.e("-->", weaponEntityResult.toString())
         
@@ -108,11 +108,11 @@ class BeautifulGirlFragment : Fragment(), BaseQuickAdapter.OnItemClickListener, 
             0 -> {
                 val iterator = weaponEntityResult.showapi_res_body
                         .entrySet().iterator()
-                val weaponEntityList: MutableList<WeaponEntity> = ArrayList()
+                val weaponEntityList: MutableList<GirlEntity> = ArrayList()
                 while (iterator.hasNext()) {
                     val next = iterator.next()
                     try {
-                        val huaBan = Gson().fromJson(next.value, WeaponEntity::class.java)
+                        val huaBan = Gson().fromJson(next.value, GirlEntity::class.java)
                         weaponEntityList.add(huaBan)
                     } catch (e: Exception) {
                     }

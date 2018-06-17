@@ -20,5 +20,5 @@ interface BeautifulGirlUrl {
     }
     
     @POST("819-1/")
-    fun beautifulGirlEntity(@QueryMap maps: Map<String, String>): Observable<WeaponEntityResult>
+    fun beautifulGirlEntity(@QueryMap maps: Map<String, String>): Observable<GirlEntityResult>
 }

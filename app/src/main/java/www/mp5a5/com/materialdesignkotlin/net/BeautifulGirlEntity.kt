@@ -9,9 +9,9 @@ import com.google.gson.JsonObject
  * @author ：king9999 on 2018/6/15 09：54
  * @email：wwb199055@enn.cn
  */
-data class WeaponEntityResult(val showapi_res_code: Int, val showapi_res_error: String, val showapi_res_body: JsonObject)
+data class GirlEntityResult(val showapi_res_code: Int, val showapi_res_error: String, val showapi_res_body: JsonObject)
 
-data class WeaponEntity(val title: String, val thumb: String, val url: String) : Parcelable {
+data class GirlEntity(val title: String, val thumb: String, val url: String) : Parcelable {
     constructor(parcel: Parcel) : this(parcel.readString(), parcel.readString(), parcel.readString()) {
     }
     
@@ -25,12 +25,12 @@ data class WeaponEntity(val title: String, val thumb: String, val url: String) :
         return 0
     }
     
-    companion object CREATOR : Parcelable.Creator<WeaponEntity> {
-        override fun createFromParcel(parcel: Parcel): WeaponEntity {
-            return WeaponEntity(parcel)
+    companion object CREATOR : Parcelable.Creator<GirlEntity> {
+        override fun createFromParcel(parcel: Parcel): GirlEntity {
+            return GirlEntity(parcel)
         }
         
-        override fun newArray(size: Int): Array<WeaponEntity?> {
+        override fun newArray(size: Int): Array<GirlEntity?> {
             return arrayOfNulls(size)
         }
     }

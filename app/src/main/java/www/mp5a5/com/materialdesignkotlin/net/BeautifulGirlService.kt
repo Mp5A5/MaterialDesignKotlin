@@ -11,7 +11,7 @@ object BeautifulGirlService : BaseBeautifulGirlService() {
     
     private val mBeautifulGirlUrl: BeautifulGirlUrl = RetrofitFactory.create(BeautifulGirlUrl::class.java)
     
-    fun getBeautifulGirlData(type: Int, page: Int): Observable<WeaponEntityResult> {
+    fun getBeautifulGirlData(type: Int, page: Int): Observable<GirlEntityResult> {
         val params = getPublicParams()
         //val params = mutableMapOf<String, Any>()
         //val params: MutableMap<String, Any> = mutableMapOf()

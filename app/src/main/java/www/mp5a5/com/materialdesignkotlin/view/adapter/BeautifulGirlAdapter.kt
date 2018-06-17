@@ -4,17 +4,17 @@ import com.bumptech.glide.Glide
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import www.mp5a5.com.materialdesignkotlin.R
-import www.mp5a5.com.materialdesignkotlin.net.WeaponEntity
+import www.mp5a5.com.materialdesignkotlin.net.GirlEntity
 
 /**
  * @describe
  * @author ：king9999 on 2018/6/15 10：13
  * @email：wwb199055@enn.cn
  */
-class WeaponAdapter(layoutId: Int = R.layout.item_weapon) : BaseQuickAdapter<WeaponEntity, BaseViewHolder>(layoutId), OnItemMoving {
+class WeaponAdapter(layoutId: Int = R.layout.item_weapon) : BaseQuickAdapter<GirlEntity, BaseViewHolder>(layoutId), OnItemMoving {
 
 
-    override fun convert(helper: BaseViewHolder?, item: WeaponEntity?) {
+    override fun convert(helper: BaseViewHolder?, item: GirlEntity?) {
         Glide.with(mContext)
                 .load(item?.thumb)
                 .into(helper!!.getView(R.id.iv_girl_img))
