@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_main.*
 import www.mp5a5.com.materialdesignkotlin.Constant
 import www.mp5a5.com.materialdesignkotlin.R
+import www.mp5a5.com.materialdesignkotlin.customview.BottomNavigationViewHelper
 import www.mp5a5.com.materialdesignkotlin.view.frag.BeautifulGirlFragment
 import www.mp5a5.com.materialdesignkotlin.view.frag.IntroduceFragment
 import www.mp5a5.com.materialdesignkotlin.view.frag.TabScrollViewFrag
@@ -57,6 +58,9 @@ class MainActivity : AppCompatActivity() {
         //去掉NavigationView滚动条
         val navigationMenuView = mMainNavigationViewNv!!.getChildAt(0) as NavigationMenuView
         navigationMenuView!!.setVerticalScrollBarEnabled(false);
+        
+        //利用反射修改底层源码
+        BottomNavigationViewHelper.disableShiftMode(mMainBottomNavigationViewBv)
     }
     
     
@@ -123,7 +127,7 @@ class MainActivity : AppCompatActivity() {
         }
         
         //底部点击事件
-        mMainBottomNavigationViewBv!!.setOnNavigationItemReselectedListener {
+        mMainBottomNavigationViewBv!!.setOnNavigationItemSelectedListener {
             mMainDrawerLayoutDl!!.closeDrawers()
             when (it.itemId) {
                 R.id.bottom_weapon_inc -> {
@@ -155,7 +159,7 @@ class MainActivity : AppCompatActivity() {
                     mMainNavigationViewNv.setCheckedItem(R.id.nav_things_inc)
                 }
             }
-            true
+            false
         }
     }
     
