@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.act.BeautifulGirlDetailActivity" />
+        <activity android:name=".view.frag.TabScrollViewActivity" />
     </application>
 
 </manifest>

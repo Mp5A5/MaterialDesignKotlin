@@ -16,6 +16,7 @@ import www.mp5a5.com.materialdesignkotlin.Constant
 import www.mp5a5.com.materialdesignkotlin.R
 import www.mp5a5.com.materialdesignkotlin.view.frag.BeautifulGirlFragment
 import www.mp5a5.com.materialdesignkotlin.view.frag.IntroduceFragment
+import www.mp5a5.com.materialdesignkotlin.view.frag.TabScrollViewFrag
 
 
 fun showSnackbar(viewGroup: ViewGroup, str: String, duration: Int = 1000) {
@@ -25,14 +26,14 @@ fun showSnackbar(viewGroup: ViewGroup, str: String, duration: Int = 1000) {
 }
 
 class MainActivity : AppCompatActivity() {
-
+    
     private var currentFragment: Fragment? = null
-
+    
     private var weaponFragment: BeautifulGirlFragment? = null
     private var peopleFragment: IntroduceFragment? = null
-    private var subFragment: IntroduceFragment? = null
+    private var subFragment: TabScrollViewFrag? = null
     private var thingsFragment: IntroduceFragment? = null
-
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.requestFeature(Window.FEATURE_CONTENT_TRANSITIONS)
@@ -44,21 +45,21 @@ class MainActivity : AppCompatActivity() {
         }
         switchFragment(weaponFragment!!)
     }
-
-
+    
+    
     private fun initView() {
         
         
         Glide.with(this)
                 .load(Constant.HEAD_IMAGE_URL)
                 .into(mMainNavigationViewNv.getHeaderView(0).findViewById(R.id.iv_head))
-
+        
         //去掉NavigationView滚动条
         val navigationMenuView = mMainNavigationViewNv!!.getChildAt(0) as NavigationMenuView
         navigationMenuView!!.setVerticalScrollBarEnabled(false);
     }
-
-
+    
+    
     private fun initListener() {
         //侧滑菜单事件
         mMainNavigationViewNv!!.setCheckedItem(R.id.nav_weapon_inc)
@@ -66,7 +67,7 @@ class MainActivity : AppCompatActivity() {
             mMainNavigationViewNv!!.setCheckedItem(item.itemId)
             mMainDrawerLayoutDl!!.closeDrawers()
             when (item.itemId) {
-
+                
                 R.id.nav_weapon_inc -> {
                     if (weaponFragment == null) {
                         weaponFragment = BeautifulGirlFragment()
@@ -74,7 +75,7 @@ class MainActivity : AppCompatActivity() {
                     switchFragment(weaponFragment!!)
                     mMainBottomNavigationViewBv.selectedItemId = R.id.bottom_weapon_inc
                 }
-
+                
                 R.id.nav_people_inc -> {
                     if (peopleFragment == null) {
                         peopleFragment = IntroduceFragment.newInstance(getString(R.string.people_inc))
@@ -82,15 +83,15 @@ class MainActivity : AppCompatActivity() {
                     switchFragment(peopleFragment!!)
                     mMainBottomNavigationViewBv.selectedItemId = R.id.bottom_people_inc
                 }
-
+                
                 R.id.nav_sub_inc -> {
                     if (subFragment == null) {
-                        subFragment = IntroduceFragment.newInstance(getString(R.string.sub_inc))
+                        subFragment = TabScrollViewFrag.newInstance(getString(R.string.sub_inc))
                     }
                     switchFragment(subFragment!!)
                     mMainBottomNavigationViewBv.selectedItemId = R.id.bottom_sub_inc
                 }
-
+                
                 R.id.nav_things_inc -> {
                     if (thingsFragment == null) {
                         thingsFragment = IntroduceFragment.newInstance(getString(R.string.thing_inc))
@@ -98,20 +99,20 @@ class MainActivity : AppCompatActivity() {
                     switchFragment(thingsFragment!!)
                     mMainBottomNavigationViewBv.selectedItemId = R.id.bottom_things_inc
                 }
-
+                
                 R.id.nav_bottom_dialog -> {
-
+                
                 }
-
+                
                 R.id.nav_snack_bar -> {
                     // 弹出 SnackBar 和 Toast
                     Snackbar.make(mMainContainerFl, "弹出 SnackBar", Snackbar.LENGTH_SHORT).setAction("Cancel") {
                         Toast.makeText(this@MainActivity, "Cancel this action", Toast.LENGTH_SHORT).show()
                     }.show()
-
+                    
                     //showSnackbar(mMainContainerFl, "弹出 SnackBar")
                 }
-
+                
                 R.id.nav_alert_dialog -> {
                     // 弹出 AlertDialog
                     AlertDialog.Builder(this).setTitle("title").setMessage("message").setNegativeButton("确认", null)
@@ -120,7 +121,7 @@ class MainActivity : AppCompatActivity() {
             }
             false
         }
-
+        
         //底部点击事件
         mMainBottomNavigationViewBv!!.setOnNavigationItemReselectedListener {
             mMainDrawerLayoutDl!!.closeDrawers()
@@ -141,7 +142,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.bottom_sub_inc -> {
                     if (subFragment == null) {
-                        subFragment = IntroduceFragment.newInstance(getString(R.string.sub_inc))
+                        subFragment = TabScrollViewFrag.newInstance(getString(R.string.sub_inc))
                     }
                     switchFragment(subFragment!!)
                     mMainNavigationViewNv.setCheckedItem(R.id.nav_sub_inc)
@@ -157,12 +158,12 @@ class MainActivity : AppCompatActivity() {
             true
         }
     }
-
+    
     private fun switchFragment(targetFragment: Fragment) {
-
+        
         // 如果当前的fragment 就是要替换的fragment 就直接return
         if (currentFragment == targetFragment) return
-
+        
         // 获得 Fragment 事务
         val transaction = supportFragmentManager.beginTransaction()
         // 如果当前Fragment不为空，则隐藏当前的Fragment
@@ -181,4 +182,5 @@ class MainActivity : AppCompatActivity() {
         //并将要显示的Fragment 设为当前的 Fragment
         currentFragment = targetFragment
     }
+    
 }

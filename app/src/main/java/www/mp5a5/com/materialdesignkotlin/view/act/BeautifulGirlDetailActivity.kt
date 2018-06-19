@@ -58,4 +58,5 @@ class BeautifulGirlDetailActivity : AppCompatActivity() {
     }
     
     
+    
 }
