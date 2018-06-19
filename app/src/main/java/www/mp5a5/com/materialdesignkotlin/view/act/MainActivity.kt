@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import www.mp5a5.com.materialdesignkotlin.Constant
 import www.mp5a5.com.materialdesignkotlin.R
 import www.mp5a5.com.materialdesignkotlin.view.frag.BeautifulGirlFragment
-import www.mp5a5.com.materialdesignkotlin.view.frag.TestFragment
+import www.mp5a5.com.materialdesignkotlin.view.frag.IntroduceFragment
 
 
 fun showSnackbar(viewGroup: ViewGroup, str: String, duration: Int = 1000) {
@@ -29,9 +29,9 @@ class MainActivity : AppCompatActivity() {
     private var currentFragment: Fragment? = null
 
     private var weaponFragment: BeautifulGirlFragment? = null
-    private var peopleFragment: TestFragment? = null
-    private var subFragment: TestFragment? = null
-    private var thingsFragment: TestFragment? = null
+    private var peopleFragment: IntroduceFragment? = null
+    private var subFragment: IntroduceFragment? = null
+    private var thingsFragment: IntroduceFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.nav_people_inc -> {
                     if (peopleFragment == null) {
-                        peopleFragment = TestFragment.newInstance(getString(R.string.people_inc))
+                        peopleFragment = IntroduceFragment.newInstance(getString(R.string.people_inc))
                     }
                     switchFragment(peopleFragment!!)
                     mMainBottomNavigationViewBv.selectedItemId = R.id.bottom_people_inc
@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.nav_sub_inc -> {
                     if (subFragment == null) {
-                        subFragment = TestFragment.newInstance(getString(R.string.sub_inc))
+                        subFragment = IntroduceFragment.newInstance(getString(R.string.sub_inc))
                     }
                     switchFragment(subFragment!!)
                     mMainBottomNavigationViewBv.selectedItemId = R.id.bottom_sub_inc
@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.nav_things_inc -> {
                     if (thingsFragment == null) {
-                        thingsFragment = TestFragment.newInstance(getString(R.string.thing_inc))
+                        thingsFragment = IntroduceFragment.newInstance(getString(R.string.thing_inc))
                     }
                     switchFragment(thingsFragment!!)
                     mMainBottomNavigationViewBv.selectedItemId = R.id.bottom_things_inc
@@ -134,21 +134,21 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.bottom_people_inc -> {
                     if (peopleFragment == null) {
-                        peopleFragment = TestFragment.newInstance(getString(R.string.people_inc))
+                        peopleFragment = IntroduceFragment.newInstance(getString(R.string.people_inc))
                     }
                     switchFragment(peopleFragment!!)
                     mMainNavigationViewNv.setCheckedItem(R.id.nav_people_inc)
                 }
                 R.id.bottom_sub_inc -> {
                     if (subFragment == null) {
-                        subFragment = TestFragment.newInstance(getString(R.string.sub_inc))
+                        subFragment = IntroduceFragment.newInstance(getString(R.string.sub_inc))
                     }
                     switchFragment(subFragment!!)
                     mMainNavigationViewNv.setCheckedItem(R.id.nav_sub_inc)
                 }
                 R.id.bottom_things_inc -> {
                     if (thingsFragment == null) {
-                        thingsFragment = TestFragment.newInstance(getString(R.string.thing_inc))
+                        thingsFragment = IntroduceFragment.newInstance(getString(R.string.thing_inc))
                     }
                     switchFragment(thingsFragment!!)
                     mMainNavigationViewNv.setCheckedItem(R.id.nav_things_inc)

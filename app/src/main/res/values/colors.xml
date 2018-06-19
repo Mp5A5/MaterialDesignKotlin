@@ -8,4 +8,8 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="transparent">#00000000</color>
+
+    <!--蓝色-->
+    <color name="blue_1983D1">#1983D1</color>
+    <color name="blue_1673B8">#1673B8</color>
 </resources>

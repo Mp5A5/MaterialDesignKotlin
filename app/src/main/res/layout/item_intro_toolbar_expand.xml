@@ -1,0 +1,67 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size_50dp"
+    android:background="@color/blue_1983D1"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/size_10dp"
+        android:layout_toStartOf="@+id/mExpandContactIv"
+        android:background="@drawable/shape_search"
+        android:paddingLeft="@dimen/size_10dp"
+        android:paddingRight="@dimen/size_10dp"
+        >
+
+        <ImageView
+            android:id="@+id/mExpandSearchIv"
+            android:layout_width="@dimen/size_20dp"
+            android:layout_height="@dimen/size_20dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_search"
+            />
+
+        <EditText
+            android:id="@+id/mExpandInputEt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/mExpandSearchIv"
+            android:paddingStart="@dimen/size_10dp"
+            android:background="@null"
+            android:hint="搜索商品"
+            android:textColorHint="@color/white"
+            android:textSize="@dimen/size_16dp"
+            />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/mExpandPlusIv"
+        android:layout_width="@dimen/size_20dp"
+        android:layout_height="@dimen/size_20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/size_10dp"
+        android:src="@mipmap/icon_plus"
+        />
+
+    <ImageView
+        android:id="@+id/mExpandContactIv"
+        android:layout_width="@dimen/size_25dp"
+        android:layout_height="@dimen/size_25dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/size_10dp"
+        android:layout_toStartOf="@+id/mExpandPlusIv"
+        android:src="@mipmap/icon_contact"
+        />
+
+    <View
+        android:id="@+id/mExpandMaskV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        />
+
+</RelativeLayout>

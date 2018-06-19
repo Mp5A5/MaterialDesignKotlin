@@ -1,0 +1,64 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size_50dp"
+    android:background="@color/blue_1983D1"
+    >
+
+    <ImageView
+        android:id="@+id/mCollapseScanIv"
+        android:layout_width="@dimen/size_30dp"
+        android:layout_height="@dimen/size_30dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/size_20dp"
+        android:src="@mipmap/small_scan"
+        />
+
+    <ImageView
+        android:id="@+id/mCollapsePayIv"
+        android:layout_width="@dimen/size_30dp"
+        android:layout_height="@dimen/size_30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/size_20dp"
+        android:layout_toEndOf="@+id/mCollapseScanIv"
+        android:src="@mipmap/small_pay"
+        />
+
+    <ImageView
+        android:id="@+id/mCollapseChargeIv"
+        android:layout_width="@dimen/size_30dp"
+        android:layout_height="@dimen/size_30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/size_20dp"
+        android:layout_toEndOf="@+id/mCollapsePayIv"
+        android:src="@mipmap/small_charge"
+        />
+
+    <ImageView
+        android:id="@+id/mCollapseMoneyIv"
+        android:layout_width="@dimen/size_30dp"
+        android:layout_height="@dimen/size_30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/size_20dp"
+        android:layout_toEndOf="@+id/mCollapseChargeIv"
+        android:src="@mipmap/small_money"
+        />
+
+    <ImageView
+        android:id="@+id/mCollapsePlusIv"
+        android:layout_width="@dimen/size_30dp"
+        android:layout_height="@dimen/size_30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/size_20dp"
+        android:src="@mipmap/icon_plus"
+        />
+
+    <View
+        android:id="@+id/mCollapseMaskV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        />
+
+</RelativeLayout>
