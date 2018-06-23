@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.act.BeautifulGirlDetailActivity" />
-        <activity android:name=".view.frag.TabScrollViewActivity" />
+        <activity android:name=".view.act.TabScrollViewActivity" />
+        <activity android:name=".view.frag.AliPayActivity" />
     </application>
 
 </manifest>

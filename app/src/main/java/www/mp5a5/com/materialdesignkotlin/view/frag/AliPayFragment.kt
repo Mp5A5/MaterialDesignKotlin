@@ -3,11 +3,9 @@ package www.mp5a5.com.materialdesignkotlin.view.frag
 import android.graphics.Color
 import android.os.Bundle
 import android.support.design.widget.AppBarLayout
-import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
-import android.view.LayoutInflater
+import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_introduce.*
 import kotlinx.android.synthetic.main.item_intro_ali_pay.*
 import kotlinx.android.synthetic.main.item_intro_toolbar_expand.*
@@ -18,35 +16,19 @@ import www.mp5a5.com.materialdesignkotlin.R
  * @author ：king9999 on 2018/6/14 19：38
  * @email：wwb199055@enn.cn
  */
-class IntroduceFragment : Fragment(), AppBarLayout.OnOffsetChangedListener {
+class AliPayActivity : AppCompatActivity(), AppBarLayout.OnOffsetChangedListener {
     
     private lateinit var mContent: String
     private var mMaskColor: Int = 0
     
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mContent = arguments!!.getString("msg")
-    }
-    
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_introduce, container, false)
-    }
-    
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        mMaskColor = ContextCompat.getColor(this!!.activity!!, R.color.blue_1983D1)
+        setContentView(R.layout.fragment_introduce)
+        mMaskColor = ContextCompat.getColor(this, R.color.blue_1983D1)
         mIntroAppBarLayoutAl.addOnOffsetChangedListener(this)
     }
     
-    companion object {
-        fun newInstance(msg: String): IntroduceFragment {
-            val fragment = IntroduceFragment()
-            val bundle = Bundle()
-            bundle.putString("msg", msg)
-            fragment.arguments = bundle
-            return fragment
-        }
-    }
     
     override fun onOffsetChanged(appBarLayout: AppBarLayout?, verticalOffset: Int) {
         val offSet = Math.abs(verticalOffset)
@@ -60,7 +42,7 @@ class IntroduceFragment : Fragment(), AppBarLayout.OnOffsetChangedListener {
             mIntroExpand.visibility = View.VISIBLE
             mIntroCollapse.visibility = View.GONE
             mExpandMaskV.setBackgroundColor(maskColorInDouble)
-        }else{
+        } else {
             mIntroExpand.visibility = View.GONE
             mIntroCollapse.visibility = View.VISIBLE
             mExpandMaskV.setBackgroundColor(maskColorOut)

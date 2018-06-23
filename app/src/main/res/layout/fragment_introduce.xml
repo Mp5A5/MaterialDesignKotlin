@@ -34,8 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_50dp"
                 app:layout_collapseMode="pin"
-                app:contentInsetLeft="0dp"
-                app:contentInsetRight="0dp"
+                app:contentInsetStart="0dp"
                 >
 
                 <include

@@ -33,7 +33,7 @@ import java.util.*
  * @author ：king9999 on 2018/6/14 19：38
  * @email：wwb199055@enn.cn
  */
-class BeautifulGirlFragment : Fragment(), BaseQuickAdapter.OnItemClickListener, BaseQuickAdapter.RequestLoadMoreListener {
+class GirlFragment : Fragment(), BaseQuickAdapter.OnItemClickListener, BaseQuickAdapter.RequestLoadMoreListener {
     
     private var mAdapter: WeaponAdapter? = null
     private val startIndex = 0

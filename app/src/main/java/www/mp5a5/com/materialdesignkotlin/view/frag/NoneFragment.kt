@@ -1,21 +1,19 @@
 package www.mp5a5.com.materialdesignkotlin.view.frag
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_scroll.*
+import kotlinx.android.synthetic.main.fragment_none.*
 import www.mp5a5.com.materialdesignkotlin.R
-import www.mp5a5.com.materialdesignkotlin.view.act.TabScrollViewActivity
 
 /**
  * @describe
  * @author ：king9999 on 2018/6/19 17：49
  * @email：wwb199055@enn.cn
  */
-class TabScrollViewFrag : Fragment() {
+class NoneFragment : Fragment() {
     
     private lateinit var mMsg: String
     
@@ -25,8 +23,8 @@ class TabScrollViewFrag : Fragment() {
     }
     
     companion object {
-        fun newInstance(msg: String): TabScrollViewFrag {
-            val fragment = TabScrollViewFrag()
+        fun newInstance(msg: String): NoneFragment {
+            val fragment = NoneFragment()
             val bundle = Bundle()
             bundle.putString("msg", msg)
             fragment.arguments = bundle
@@ -35,16 +33,12 @@ class TabScrollViewFrag : Fragment() {
     }
     
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_scroll, container, false)
+        return inflater.inflate(R.layout.fragment_none, container, false)
     }
     
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mTabTxt.text = mMsg
-        mTabTxt.setOnClickListener {
-            startActivity(Intent(activity, TabScrollViewActivity::class.java))
-        }
     }
-    
     
 }

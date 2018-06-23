@@ -1,4 +1,4 @@
-package www.mp5a5.com.materialdesignkotlin.view.frag
+package www.mp5a5.com.materialdesignkotlin.view.act
 
 import android.os.Bundle
 import android.support.design.widget.TabLayout

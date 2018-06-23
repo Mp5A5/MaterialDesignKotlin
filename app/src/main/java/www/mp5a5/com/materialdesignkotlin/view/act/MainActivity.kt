@@ -15,8 +15,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 import www.mp5a5.com.materialdesignkotlin.Constant
 import www.mp5a5.com.materialdesignkotlin.R
 import www.mp5a5.com.materialdesignkotlin.customview.BottomNavigationViewHelper
-import www.mp5a5.com.materialdesignkotlin.view.frag.BeautifulGirlFragment
-import www.mp5a5.com.materialdesignkotlin.view.frag.IntroduceFragment
+import www.mp5a5.com.materialdesignkotlin.view.frag.AliPayFragment1
+import www.mp5a5.com.materialdesignkotlin.view.frag.GirlFragment
+import www.mp5a5.com.materialdesignkotlin.view.frag.NoneFragment
 import www.mp5a5.com.materialdesignkotlin.view.frag.TabScrollViewFrag
 
 
@@ -30,10 +31,10 @@ class MainActivity : AppCompatActivity() {
     
     private var currentFragment: Fragment? = null
     
-    private var weaponFragment: BeautifulGirlFragment? = null
-    private var peopleFragment: IntroduceFragment? = null
-    private var subFragment: TabScrollViewFrag? = null
-    private var thingsFragment: IntroduceFragment? = null
+    private var girlFragment: GirlFragment? = null
+    private var aliPayFragment: AliPayFragment1? = null
+    private var tabScrollFragment: TabScrollViewFrag? = null
+    private var noneFragment: NoneFragment? = null
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,10 +42,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         initView()
         initListener()
-        if (weaponFragment == null) {
-            weaponFragment = BeautifulGirlFragment()
+        if (girlFragment == null) {
+            girlFragment = GirlFragment()
         }
-        switchFragment(weaponFragment!!)
+        switchFragment(girlFragment!!)
     }
     
     
@@ -57,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         
         //去掉NavigationView滚动条
         val navigationMenuView = mMainNavigationViewNv!!.getChildAt(0) as NavigationMenuView
-        navigationMenuView!!.setVerticalScrollBarEnabled(false);
+        navigationMenuView.setVerticalScrollBarEnabled(false);
         
         //利用反射修改底层源码
         BottomNavigationViewHelper.disableShiftMode(mMainBottomNavigationViewBv)
@@ -73,34 +74,34 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 
                 R.id.nav_weapon_inc -> {
-                    if (weaponFragment == null) {
-                        weaponFragment = BeautifulGirlFragment()
+                    if (girlFragment == null) {
+                        girlFragment = GirlFragment()
                     }
-                    switchFragment(weaponFragment!!)
+                    switchFragment(girlFragment!!)
                     mMainBottomNavigationViewBv.selectedItemId = R.id.bottom_weapon_inc
                 }
                 
                 R.id.nav_people_inc -> {
-                    if (peopleFragment == null) {
-                        peopleFragment = IntroduceFragment.newInstance(getString(R.string.people_inc))
+                    if (aliPayFragment == null) {
+                        aliPayFragment = AliPayFragment1.newInstance(getString(R.string.people_inc))
                     }
-                    switchFragment(peopleFragment!!)
+                    switchFragment(aliPayFragment!!)
                     mMainBottomNavigationViewBv.selectedItemId = R.id.bottom_people_inc
                 }
                 
                 R.id.nav_sub_inc -> {
-                    if (subFragment == null) {
-                        subFragment = TabScrollViewFrag.newInstance(getString(R.string.sub_inc))
+                    if (tabScrollFragment == null) {
+                        tabScrollFragment = TabScrollViewFrag.newInstance(getString(R.string.sub_inc))
                     }
-                    switchFragment(subFragment!!)
+                    switchFragment(tabScrollFragment!!)
                     mMainBottomNavigationViewBv.selectedItemId = R.id.bottom_sub_inc
                 }
                 
                 R.id.nav_things_inc -> {
-                    if (thingsFragment == null) {
-                        thingsFragment = IntroduceFragment.newInstance(getString(R.string.thing_inc))
+                    if (noneFragment == null) {
+                        noneFragment = NoneFragment.newInstance(getString(R.string.thing_inc))
                     }
-                    switchFragment(thingsFragment!!)
+                    switchFragment(noneFragment!!)
                     mMainBottomNavigationViewBv.selectedItemId = R.id.bottom_things_inc
                 }
                 
@@ -131,31 +132,31 @@ class MainActivity : AppCompatActivity() {
             mMainDrawerLayoutDl!!.closeDrawers()
             when (it.itemId) {
                 R.id.bottom_weapon_inc -> {
-                    if (weaponFragment == null) {
-                        weaponFragment = BeautifulGirlFragment()
+                    if (girlFragment == null) {
+                        girlFragment = GirlFragment()
                     }
-                    switchFragment(weaponFragment!!)
+                    switchFragment(girlFragment!!)
                     mMainNavigationViewNv.setCheckedItem(R.id.nav_weapon_inc)
                 }
                 R.id.bottom_people_inc -> {
-                    if (peopleFragment == null) {
-                        peopleFragment = IntroduceFragment.newInstance(getString(R.string.people_inc))
+                    if (aliPayFragment == null) {
+                        aliPayFragment = AliPayFragment1.newInstance(getString(R.string.people_inc))
                     }
-                    switchFragment(peopleFragment!!)
+                    switchFragment(aliPayFragment!!)
                     mMainNavigationViewNv.setCheckedItem(R.id.nav_people_inc)
                 }
                 R.id.bottom_sub_inc -> {
-                    if (subFragment == null) {
-                        subFragment = TabScrollViewFrag.newInstance(getString(R.string.sub_inc))
+                    if (tabScrollFragment == null) {
+                        tabScrollFragment = TabScrollViewFrag.newInstance(getString(R.string.sub_inc))
                     }
-                    switchFragment(subFragment!!)
+                    switchFragment(tabScrollFragment!!)
                     mMainNavigationViewNv.setCheckedItem(R.id.nav_sub_inc)
                 }
                 R.id.bottom_things_inc -> {
-                    if (thingsFragment == null) {
-                        thingsFragment = IntroduceFragment.newInstance(getString(R.string.thing_inc))
+                    if (noneFragment == null) {
+                        noneFragment = NoneFragment.newInstance(getString(R.string.thing_inc))
                     }
-                    switchFragment(thingsFragment!!)
+                    switchFragment(noneFragment!!)
                     mMainNavigationViewNv.setCheckedItem(R.id.nav_things_inc)
                 }
             }

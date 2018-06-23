@@ -8,14 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_scroll.*
 import www.mp5a5.com.materialdesignkotlin.R
-import www.mp5a5.com.materialdesignkotlin.view.act.TabScrollViewActivity
 
 /**
  * @describe
- * @author ：king9999 on 2018/6/19 17：49
+ * @author ：king9999 on 2018/6/14 19：38
  * @email：wwb199055@enn.cn
  */
-class TabScrollViewFrag : Fragment() {
+class AliPayFragment1 : Fragment() {
     
     private lateinit var mMsg: String
     
@@ -25,8 +24,8 @@ class TabScrollViewFrag : Fragment() {
     }
     
     companion object {
-        fun newInstance(msg: String): TabScrollViewFrag {
-            val fragment = TabScrollViewFrag()
+        fun newInstance(msg: String): AliPayFragment1 {
+            val fragment = AliPayFragment1()
             val bundle = Bundle()
             bundle.putString("msg", msg)
             fragment.arguments = bundle
@@ -42,7 +41,7 @@ class TabScrollViewFrag : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         mTabTxt.text = mMsg
         mTabTxt.setOnClickListener {
-            startActivity(Intent(activity, TabScrollViewActivity::class.java))
+            startActivity(Intent(activity, AliPayActivity::class.java))
         }
     }
     
