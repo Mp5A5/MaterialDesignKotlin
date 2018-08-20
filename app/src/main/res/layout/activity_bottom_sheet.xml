@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,37 +7,42 @@
 
     <!-- 其它布局 -->
     <LinearLayout
+        android:gravity="bottom"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
 
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btBottomSheet"
+        <Button
+            android:id="@+id/bt_show"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_60dp"
             android:backgroundTint="@color/colorAccent"
-            android:textAllCaps="false"
-            android:text="BottomSheet"
+            android:textAllCaps="true"
+            android:text="Show"
             />
 
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btBottomSheetDialog"
+        <Button
+            android:id="@+id/bt_hide"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_60dp"
             android:backgroundTint="@color/colorAccent"
-            android:textAllCaps="false"
-            android:text="BottomSheetDialog"
+            android:textAllCaps="true"
+            android:text="Hide"
             />
 
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btnBottomSheetFragment"
+        <Button
+            android:id="@+id/bt_collapse"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_60dp"
             android:backgroundTint="@color/colorAccent"
-            android:textAllCaps="false"
-            android:text="BottomSheetFragment"
+            android:textAllCaps="true"
+            android:text="Collapse"
+            android:layout_marginBottom="@dimen/size_100dp"
             />
     </LinearLayout>
 
-</android.support.v4.widget.NestedScrollView>
+    <!-- 底部菜单布局 -->
+    <!--<include layout="@layout/layout_bottom_sheet_linear" />-->
+    <include layout="@layout/layout_bottom_sheet_recyclerview" />
+</android.support.design.widget.CoordinatorLayout>

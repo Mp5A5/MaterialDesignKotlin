@@ -20,6 +20,9 @@
         <activity android:name=".view.act.BeautifulGirlDetailActivity" />
         <activity android:name=".view.act.TabScrollViewActivity" />
         <activity android:name=".view.frag.AliPayActivity" />
+        <activity android:name=".view.act.BottomSheetActivity" />
+        <activity android:name=".view.act.BottomSheetDialogActivity" />
+        <activity android:name=".view.act.BottomSheetDialogFragmentAct" />
     </application>
 
 </manifest>
