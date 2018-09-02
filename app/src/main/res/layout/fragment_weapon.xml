@@ -28,7 +28,7 @@
             />
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.widget.SwipeRefreshLayout
+    <com.mp5a5.www.mylibrary.refresh.RotateRefreshLayout
         android:id="@+id/mGirlRefreshLayoutRl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -41,7 +41,7 @@
             android:layout_height="match_parent"
             android:foregroundGravity="center"
             />
-    </android.support.v4.widget.SwipeRefreshLayout>
+    </com.mp5a5.www.mylibrary.refresh.RotateRefreshLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/mGirlFloatingActionButtonFab"

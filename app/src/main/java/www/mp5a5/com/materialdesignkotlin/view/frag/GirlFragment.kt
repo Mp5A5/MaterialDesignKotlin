@@ -2,7 +2,6 @@ package www.mp5a5.com.materialdesignkotlin.view.frag
 
 import android.app.ActivityOptions
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.RecyclerView
@@ -51,12 +50,12 @@ class GirlFragment : Fragment(), BaseQuickAdapter.OnItemClickListener, BaseQuick
         initView()
         initAdapter()
         initListener()
-        mGirlRefreshLayoutRl.isRefreshing = true
+        //mGirlRefreshLayoutRl.isRefreshing = true
         initData(startType, startIndex, isRefresh)
     }
     
     private fun initView() {
-        mGirlRefreshLayoutRl.setColorSchemeColors(Color.RED, Color.BLUE, Color.GREEN)
+        //mGirlRefreshLayoutRl.setColorSchemeColors(Color.RED, Color.BLUE, Color.GREEN)
         mGirlRecyclerView.setHasFixedSize(true)
         mGirlRecyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         (mGirlRecyclerView.layoutManager as StaggeredGridLayoutManager).gapStrategy = StaggeredGridLayoutManager.GAP_HANDLING_NONE
@@ -78,19 +77,25 @@ class GirlFragment : Fragment(), BaseQuickAdapter.OnItemClickListener, BaseQuick
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ weaponEntityResult ->
-                    mGirlRefreshLayoutRl.isRefreshing = false
+                    //mGirlRefreshLayoutRl.isRefreshing = false
                     setData(weaponEntityResult.showapi_res_code, weaponEntityResult, refresh)
                 }, {
-                    mGirlRefreshLayoutRl.isRefreshing = false
+                    //mGirlRefreshLayoutRl.isRefreshing = false
                     Toast.makeText(activity, "获取数据失败！", Toast.LENGTH_SHORT).show()
                 })
     }
     
     private fun initListener() {
         mAdapter!!.onItemClickListener = this
-        mGirlRefreshLayoutRl.setOnRefreshListener {
+      /*  mGirlRefreshLayoutRl.setOnRefreshListener {
             mGirlRefreshLayoutRl.isRefreshing = true
             initData(startType, startIndex, isRefresh)
+        }*/
+    
+        mGirlRefreshLayoutRl.setRotateRefreshListener {
+           // mGirlRefreshLayoutRl.isRefreshing = true
+            initData(startType, startIndex, isRefresh)
+            mGirlRefreshLayoutRl.finishRefreshing()
         }
         
         mAdapter!!.setOnLoadMoreListener(this, mGirlRecyclerView!!)

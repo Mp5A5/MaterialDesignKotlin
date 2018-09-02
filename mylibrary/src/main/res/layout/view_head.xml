@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map5a5="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <com.mp5a5.www.mylibrary.refresh.WaveView
+        android:id="@+id/wv_wave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        />
+
+
+    <com.mp5a5.www.mylibrary.refresh.RoundDotView
+        android:id="@+id/rdv_round"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        />
+
+
+    <!--  <com.mp5a5.www.swiplibrary.refresh.RoundProgressView
+          android:id="@+id/round2"
+          android:gravity="center"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center" />-->
+    <com.mp5a5.www.mylibrary.refresh.RotateCircleView
+        android:id="@+id/rcv_rotate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        map5a5:rotateNum="6"
+        />
+
+    <com.mp5a5.www.mylibrary.refresh.RippleView
+        android:id="@+id/rv_ripple"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</FrameLayout>
