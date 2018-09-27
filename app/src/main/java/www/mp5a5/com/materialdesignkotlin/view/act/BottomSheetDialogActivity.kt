@@ -67,6 +67,12 @@ class BottomSheetDialogActivity : AppCompatActivity() {
         bottomSheetDialog1 = BottomSheetDialog(this)
         bottomSheetDialog1!!.setContentView(view)
         bottomSheetDialog1!!.setCanceledOnTouchOutside(true)
+    
+        /**
+         * 设置弹出高度
+         */
+        /*val mBehavior = BottomSheetBehavior.from(view.parent as View)
+        mBehavior.setPeekHeight(height)*/
     }
     
     
